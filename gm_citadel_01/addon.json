@@ -1,0 +1,6 @@
+{
+"title" : "[THS] gm_citadel_01",
+"type" : "map",
+"tags" : ["build","roleplay"],
+"ignore" : ["*.psd", "*.vcproj", "*.svn*"]
+}
