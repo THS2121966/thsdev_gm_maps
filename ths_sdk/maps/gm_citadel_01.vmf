@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8506"
-	"mapversion" "25"
+	"mapversion" "32"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -32,13 +32,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "32"
+	"nGridSpacing" "8"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "0"
-	"mapversion" "25"
+	"mapversion" "32"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -165607,13 +165607,292 @@ entity
 		"logicalpos" "[0 2500]"
 	}
 }
+entity
+{
+	"id" "18580"
+	"classname" "env_projectedtexture"
+	"angles" "-30 62 0"
+	"cameraspace" "0"
+	"enableshadows" "1"
+	"farz" "750.0"
+	"lightcolor" "147 226 240 1300"
+	"lightfov" "90.0"
+	"lightonlytarget" "0"
+	"lightstrength" "6.35"
+	"lightworld" "1"
+	"nearz" "4.0"
+	"spawnflags" "0"
+	"targetname" "pj_static04"
+	"textureframe" "0"
+	"texturename" "effects/flashlight001"
+	"origin" "10528 4372 -1724.75"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 -768]"
+	}
+}
+entity
+{
+	"id" "18644"
+	"classname" "trigger_multiple"
+	"origin" "10272 4736 -1408"
+	"spawnflags" "1"
+	"StartDisabled" "0"
+	"wait" "1"
+	connections
+	{
+		"OnStartTouch" "pj_static04,TurnOn,,0,-1"
+		"OnEndTouchAll" "pj_static04,TurnOff,,0,-1"
+	}
+	solid
+	{
+		"id" "18642"
+		side
+		{
+			"id" "13777"
+			"plane" "(9664 5952 -576) (10880 5952 -576) (10880 3520 -576)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13776"
+			"plane" "(9664 3520 -2240) (10880 3520 -2240) (10880 5952 -2240)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13775"
+			"plane" "(9664 5952 -576) (9664 3520 -576) (9664 3520 -2240)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13774"
+			"plane" "(10880 5952 -2240) (10880 3520 -2240) (10880 3520 -576)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13773"
+			"plane" "(10880 5952 -576) (9664 5952 -576) (9664 5952 -2240)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13772"
+			"plane" "(10880 3520 -2240) (9664 3520 -2240) (9664 3520 -576)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "18675"
+	"classname" "logic_auto"
+	"spawnflags" "1"
+	connections
+	{
+		"OnMapSpawn" "temp_map_pj,ForceSpawn,,0,-1"
+	}
+	"origin" "10648 4864 -568"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "18689"
+	"classname" "logic_relay"
+	"spawnflags" "0"
+	"targetname" "relay_pj_off"
+	connections
+	{
+		"OnTrigger" "pj_static*,Kill,,0,-1"
+		"OnTrigger" "pj_info,Command,say thsdev_map_pj_deleted,0,-1"
+		"OnTrigger" "s_pj_toggle,PlaySound,,0,-1"
+	}
+	"origin" "10648 4864 -552"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "18695"
+	"classname" "logic_relay"
+	"spawnflags" "0"
+	"targetname" "relay_pj_on"
+	connections
+	{
+		"OnTrigger" "temp_map_pj,ForceSpawn,,0.3,-1"
+		"OnTrigger" "pj_static*,Kill,,0,-1"
+		"OnTrigger" "pj_info,Command,say thsdev_map_pj_reloading,0,-1"
+		"OnTrigger" "pj_info,Command,say thsdev_map_pj_reloading_done,0.3,-1"
+		"OnTrigger" "s_pj_toggle,PlaySound,,0,-1"
+	}
+	"origin" "10648 4864 -536"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "18699"
+	"classname" "point_template"
+	"spawnflags" "2"
+	"targetname" "temp_map_pj"
+	"Template01" "pj_static01"
+	"Template02" "pj_static02"
+	"Template03" "pj_static03"
+	"Template04" "pj_static04"
+	connections
+	{
+		"OnEntitySpawned" "pj_static*,TurnOff,,0,-1"
+	}
+	"origin" "10632 4864 -552"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "18817"
+	"classname" "point_servercommand"
+	"targetname" "pj_info"
+	"origin" "10648 4864 -520"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2500]"
+	}
+}
+entity
+{
+	"id" "18890"
+	"classname" "point_message"
+	"developeronly" "0"
+	"message" "If you want to disable all of pj lights - ent_fire relay_pj_off Trigger"
+	"radius" "128"
+	"spawnflags" "0"
+	"targetname" "map_message_pj01"
+	"origin" "6400 2816 -240"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3000]"
+	}
+}
+entity
+{
+	"id" "18930"
+	"classname" "point_message"
+	"developeronly" "0"
+	"message" "If you want to enable all of pj lights - ent_fire relay_pj_on Trigger"
+	"radius" "128"
+	"spawnflags" "0"
+	"targetname" "map_message_pj02"
+	"origin" "6400 2792 -240"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3000]"
+	}
+}
+entity
+{
+	"id" "18940"
+	"classname" "ambient_generic"
+	"health" "10"
+	"message" "buttons/lightswitch2.wav"
+	"pitch" "100"
+	"pitchstart" "100"
+	"radius" "1250"
+	"spawnflags" "49"
+	"targetname" "s_pj_toggle"
+	"origin" "10664 4864 -552"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3500]"
+	}
+}
 cameras
 {
 	"activecamera" "0"
 	camera
 	{
-		"position" "[10411.1 4315.69 -1596.85]"
-		"look" "[10312.5 4555.07 -1659.48]"
+		"position" "[10643.4 4761.89 -512.367]"
+		"look" "[10651.9 5005.07 -620.702]"
 	}
 	camera
 	{
